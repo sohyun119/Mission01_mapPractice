@@ -1,0 +1,3 @@
+# Ignore web.xml file
+src/main/webapp/WEB-INF/web.xml
+src/main/webapp/WEB-INF/lib/*
