@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>home</title>
+<title>Bookmark List</title>
 <style>
 .btn{
 	border: none;
@@ -19,22 +19,24 @@
 	border-radius: 4px;
 }
 
-#wifiTable {
+#wifiTable, #bookmarkTable {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
 
-#wifiTable td, #wifiTable th {
+#wifiTable td, #wifiTable th, #bookmarkTable td, #bookmarkTable th {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
-#wifiTable tr:nth-child(even){background-color: #f2f2f2;}
+#wifiTable tr:nth-child(even), #bookmarkTable tr:nth-child(even){
+background-color: #f2f2f2;
+}
 
-#wifiTable tr:hover {background-color: #ddd;}
+#wifiTable tr:hover, #bookmarkTable tr:hover {background-color: #ddd;}
 
-#wifiTable th {
+#wifiTable th, #bookmarkTable th{
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
@@ -69,7 +71,7 @@
 	-->
 
 
-	<h2>와이파이 정보 구하기</h2>
+	<h2>북마크 목록</h2>
 	
 	<div>
 		<a href="#">홈</a><span> | </span>
@@ -81,36 +83,14 @@
 	<br>
 	
 	<div>
-		<span>LAT:</span>
-		<input id="lat">
-		<span>, LNT:</span>
-		<input id="lnt">
-		<button class="btn">내 위치 가져오기</button>
-		<button class="btn">근처 WIPI 정보 보기</button>
-	</div>
-	<br>
-	
-	<div>
-		<table id="wifiTable">
+		<table id="bookmarkTable">
 			<thead>
 				<tr>
-					<th>거리(Km)</th>
-					<th>관리번호</th>
-					<th>자치구</th>
+					<th>ID</th>
+					<th>북마크 이름</th>
 					<th>와이파이명</th>
-					<th>도로명주소</th>
-					<th>상세주소</th>
-					<th>설치위치(층)</th>
-					<th>설치유형</th>
-					<th>설치기관</th>
-					<th>서비스구분</th>
-					<th>망종류</th>
-					<th>설치년도</th>
-					<th>실내외구분</th>
-					<th>WIFI접속환경</th>
-					<th>x좌표</th>
-					<th>y좌표</th>
-					<th>작업일자</th>
+					<th>등록일자</th>
+					<th>비고</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -120,18 +100,9 @@
 					<td></td>
 					<td></td>
 					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
+					<td>
+						<a href="#">삭제</a>
+					</td>
 				</tr>
 			</tbody>
 		</table>

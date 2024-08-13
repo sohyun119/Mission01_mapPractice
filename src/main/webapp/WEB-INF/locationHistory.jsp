@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>home</title>
+<title>Location History</title>
 <style>
 .btn{
 	border: none;
@@ -45,31 +45,7 @@
 </head>
 <body>
 
-<%
-    // ServletContext 객체를 통해 web.xml에서 apiKey 가져오기
-    ServletContext context = getServletContext();
-    String apiKey = context.getInitParameter("seoulApiKey");
-
-    // 좌표 설정 (예: 서울시청)
-    String lat = "37.5665";
-    String lng = "126.9780";
-    
-    // API 요청 URL 생성
-    String apiUrl = "http://openapi.seoul.go.kr:8088/" + apiKey + "/json/TbPublicWifiInfo/1/1000/" + lat + "/" + lng;
-
-    // HTTP 요청 보내기 (HttpClient 사용)
-    // ... (기존 코드)
-%>
-
-	<!--  
-
-	<h1>Hello main~!</h1>
-	<% out.println(java.time.LocalDateTime.now()); %>
-	
-	-->
-
-
-	<h2>와이파이 정보 구하기</h2>
+	<h2>위치 히스토리 목록</h2>
 	
 	<div>
 		<a href="#">홈</a><span> | </span>
@@ -81,36 +57,14 @@
 	<br>
 	
 	<div>
-		<span>LAT:</span>
-		<input id="lat">
-		<span>, LNT:</span>
-		<input id="lnt">
-		<button class="btn">내 위치 가져오기</button>
-		<button class="btn">근처 WIPI 정보 보기</button>
-	</div>
-	<br>
-	
-	<div>
 		<table id="wifiTable">
 			<thead>
 				<tr>
-					<th>거리(Km)</th>
-					<th>관리번호</th>
-					<th>자치구</th>
-					<th>와이파이명</th>
-					<th>도로명주소</th>
-					<th>상세주소</th>
-					<th>설치위치(층)</th>
-					<th>설치유형</th>
-					<th>설치기관</th>
-					<th>서비스구분</th>
-					<th>망종류</th>
-					<th>설치년도</th>
-					<th>실내외구분</th>
-					<th>WIFI접속환경</th>
-					<th>x좌표</th>
-					<th>y좌표</th>
-					<th>작업일자</th>
+					<th>ID</th>
+					<th>X좌표</th>
+					<th>Y좌표</th>
+					<th>조회일자</th>
+					<th>비고</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -119,24 +73,11 @@
 					<td></td>
 					<td></td>
 					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
+					<td><button class="btn">삭제</button></td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
-	
 
 </body>
 </html>
